@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.myImg {
+  overflow-x: auto;
+height:auto;
+}
+
+.myBox { 
+  border:solid 2px red
+}
+
+.mouseData{
+  border:solid 1px red
+}
