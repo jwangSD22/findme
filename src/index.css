@@ -14,13 +14,14 @@ code {
 
 .myImg {
   overflow-x: auto;
-height:auto;
+  width:70%;
+  height:auto;
 }
 
 .myBox { 
   border:solid 2px red
 }
 
-.mouseData{
-  border:solid 1px red
+.bottomMenu{
+  display:flex;
 }
