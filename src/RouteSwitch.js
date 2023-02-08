@@ -8,8 +8,9 @@ function RouteSwitch() {
   return (
 <HashRouter>
     <Routes>
-        <Route path="/" element = {<App />} />
+        
         <Route path="/developer" element = {<DeveloperTools/>}/>
+        <Route path="/" element = {<App />} />
     </Routes>
 </HashRouter>
 
