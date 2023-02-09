@@ -8,8 +8,8 @@ import { app } from "./firebase/firebase";
 import { getFirestore,doc,setDoc,collection,getDocs,getDoc, query} from "firebase/firestore";
 
 //insert current image here //
-const currentImage = coll1
-const currentImageText = 'coll1'
+const currentImage = coll2
+const currentImageText = 'coll2'
 //insert current image here
 
 
@@ -91,21 +91,35 @@ const db = getFirestore(app)
 
 const handleSubmit = async (e) => {
     e.preventDefault()
-    const folder = e.target[0].value
+    const title = e.target[0].value
     const character = e.target[1].value
-    const difficulty = e.target[2].value
+    const series = e.target[2].value
+    const difficulty = e.target[3].value
     const coord = generateRelative()
 
 
     await setDoc(
         doc(db,currentImageText,difficulty),{
-            [difficulty]:{
+           
                 'name':[character],
                 'difficulty':[difficulty],
+                'series':[series],
                 'coord':coord
-            }
+            
         }
     )
+
+    await setDoc(
+      doc(db,currentImageText,'info'),{
+          'title':title
+          }
+      
+  )
+
+    
+
+
+
 }
 
 const imageInfo = async (difficulty) => {
@@ -144,10 +158,12 @@ console.log(querySnapshot.data()[difficulty].coord)
       <button onClick={appendBox}>Generate box based on relative coordinates</button>
       <br/>
       <form onSubmit={(e)=>(handleSubmit(e))}>
-        <label>folder</label>
-        <input type="text" className='folder'></input>
+        <label>title</label>
+        <input type="text" className='title'></input>
         <label>character</label>
         <input type="text"></input>
+        <label>series</label>
+        <input type="series"></input>
         <label>difficulty</label>
         <input type="text"></input>
         <input type="submit"></input>

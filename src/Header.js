@@ -2,7 +2,7 @@ import React from 'react'
 
 function Header() {
   return (
-    <div className='Header'>FIND ME APP</div>
+    <div className='header'>FIND ME APP</div>
   )
 }
 

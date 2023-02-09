@@ -8,15 +8,16 @@ import Hiscores from "./Hiscores";
 import Footer from "./Footer";
 
 function App() {
-  const [stage, setStage] = useState("");
+  const [stage, setStage] = useState('coll1');
+  const [difficultyInfo, setDifficultyInfo] = useState([]);
   const [choosing, setChoosing] = useState(true);
 
   return (
     <div className="app">
       <Header />
-      <Findbar stage={stage} />
+      <Findbar choosing={choosing} stage={stage} difficultyInfo={difficultyInfo}/>
       <div className="gameWindow">
-        <ChooseLevel setStage={setStage} choosing={choosing} />
+        <ChooseLevel setChoosing={setChoosing} setStage={setStage} choosing={choosing} difficultyInfo={difficultyInfo} setDifficultyInfo = {setDifficultyInfo} />
         <FindmePage stage={stage} choosing={choosing} />
         <Hiscores choosing={choosing} setChoosing={setChoosing} />
       </div>
