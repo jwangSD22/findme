@@ -17,15 +17,17 @@ function App() {
     hard:true
   })
 
+  const [winStatus,setWinStatus] = useState(null)
+
 
 
   return (
     <div className="app">
-      <Header toFind={toFind} />
+      <Header toFind={toFind} winStatus={winStatus} />
       <Findbar toFind={toFind} choosing={choosing} stage={stage} difficultyInfo={difficultyInfo}/>
       <div className="gameWindow">
         <ChooseLevel stage ={stage} setChoosing={setChoosing} setStage={setStage} choosing={choosing} difficultyInfo={difficultyInfo} setDifficultyInfo = {setDifficultyInfo} />
-        <FindmePage toFind={toFind} setToFind={setToFind} stage={stage} choosing={choosing} />
+        <FindmePage difficultyInfo={difficultyInfo} toFind={toFind} setToFind={setToFind} stage={stage} choosing={choosing} />
         {/* <Hiscores choosing={choosing} setChoosing={setChoosing} /> */}
       </div>
 
