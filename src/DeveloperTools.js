@@ -3,13 +3,14 @@ import coll1 from './assets/coll1.jpg'
 import coll2 from './assets/coll2.jpg'
 import coll3 from './assets/coll3.jpg'
 import coll4 from './assets/coll4.jpg'
+
 import { useState,useEffect } from "react";
 import { app } from "./firebase/firebase";
 import { getFirestore,doc,setDoc,collection,getDocs,getDoc, query} from "firebase/firestore";
 
 //insert current image here //
-const currentImage = coll2
-const currentImageText = 'coll2'
+const currentImage = coll4        
+const currentImageText = 'coll4'
 //insert current image here
 
 

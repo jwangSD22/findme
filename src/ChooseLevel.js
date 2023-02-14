@@ -15,9 +15,8 @@ import {
 
 const db = getFirestore(app);
 
-function ChooseLevel({ setChoosing, choosing, setStage,difficultyInfo,setDifficultyInfo }) {
+function ChooseLevel({ setChoosing, choosing,stage, setStage,difficultyInfo,setDifficultyInfo }) {
   const [wheelNum, setWheelNum] = useState(0);
-
   const [hideDiv, setHideDiv] = useState(true);
 
   const imageArray = [coll1, coll2, coll3, coll4];
@@ -42,6 +41,11 @@ function ChooseLevel({ setChoosing, choosing, setStage,difficultyInfo,setDifficu
     setDifficultyInfo([]);
     setHideDiv(true);
   };
+
+  useEffect(()=>{
+    setStage(imageInfo[wheelNum][0])
+    console.log(`stage set to ${imageInfo[wheelNum][0]}`)
+      },[wheelNum])
 
   async function getInfo() {
     let myInfo = [];
@@ -79,6 +83,9 @@ function ChooseLevel({ setChoosing, choosing, setStage,difficultyInfo,setDifficu
               difficultyInfo={difficultyInfo}
               choosing={choosing}
               setChoosing={setChoosing}
+              wheelNum={wheelNum}
+              imageInfo={imageInfo}
+              stage = {stage}
             />
           </div>
         </div>
@@ -109,5 +116,6 @@ function ChooseLevel({ setChoosing, choosing, setStage,difficultyInfo,setDifficu
     </div>
   );
 }
+//TODO -- BUTTON THAT SETS THE STAGE TO THE CURRENT COLL and ALSO STARTS THE GAME
 
 export default ChooseLevel;

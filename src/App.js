@@ -11,15 +11,22 @@ function App() {
   const [stage, setStage] = useState('coll1');
   const [difficultyInfo, setDifficultyInfo] = useState([]);
   const [choosing, setChoosing] = useState(true);
+  const [toFind, setToFind] = useState({
+    easy:true,
+    medium:true,
+    hard:true
+  })
+
+
 
   return (
     <div className="app">
-      <Header />
-      <Findbar choosing={choosing} stage={stage} difficultyInfo={difficultyInfo}/>
+      <Header toFind={toFind} />
+      <Findbar toFind={toFind} choosing={choosing} stage={stage} difficultyInfo={difficultyInfo}/>
       <div className="gameWindow">
-        <ChooseLevel setChoosing={setChoosing} setStage={setStage} choosing={choosing} difficultyInfo={difficultyInfo} setDifficultyInfo = {setDifficultyInfo} />
-        <FindmePage stage={stage} choosing={choosing} />
-        <Hiscores choosing={choosing} setChoosing={setChoosing} />
+        <ChooseLevel stage ={stage} setChoosing={setChoosing} setStage={setStage} choosing={choosing} difficultyInfo={difficultyInfo} setDifficultyInfo = {setDifficultyInfo} />
+        <FindmePage toFind={toFind} setToFind={setToFind} stage={stage} choosing={choosing} />
+        {/* <Hiscores choosing={choosing} setChoosing={setChoosing} /> */}
       </div>
 
       <Footer />

@@ -27,22 +27,45 @@ code {
 }
 
 .header {
-  height:10vh;
-  background-color: blueviolet;
+  display:flex;
+  font-size: 5vh;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  height:5vh;
+  color:white;
+  background-color: rgb(37, 4, 114)
 }
 
+.app{
+  display:flex;
+  background-color: rgb(37, 4, 114);
+  flex-direction: column;
+
+}
 
 .findBar {
-  height:10vh;
-  background-color: aqua;
+  height:15vh;
+  width:100vw;
+  background-color: rgb(37, 4, 114);
   display:flex;
   justify-content: center;
+   align-items: center;
+ 
+}
+
+.findBar > .difficultyInfo{
+  margin-left:5vw;
+  margin-right:5vw;
 }
 
 .gameWindow{
   height:80vh;
   background-color:darkblue;
   overflow: auto;
+  width:100vw;
+  display:flex;
+  justify-content: center;
 
 }
 
@@ -90,6 +113,27 @@ border-radius: 25px;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+
+}
+
+.imgThumb {
+  padding-top: 0.5vh;
+  padding-bottom: 0.5vh;
+}
+
+.difficultyInfo {
+  opacity:75%;
+  color:white;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.difficultyInfo:hover {
+  opacity: 100%;
+
+
 }
 
 .imgInContainer{
@@ -110,5 +154,43 @@ border-radius: 25px;
   background-color: aqua;
   margin-left: 2vw;
   margin-right: 2vw;
+}
+
+.scrollBtns:hover{
+cursor:pointer;
+background-color: black;
+}
+
+
+.difficulty {
+  font-weight:bold;
+
+}
+.difficulty.Easy{
+  color:skyblue;
+}
+
+.difficulty.Medium{
+  color:green
+}
+
+.difficulty.Hard{
+  color:red;
+}
+
+.seriesCap {
+  opacity:50%;
+}
+
+
+
+.dropdownBox{
+  background-color: white;
+  width:50px;
+  height:50px;
+  border:solid 2px red;
+  display:flex;
+  position:absolute;
+
 }
 
