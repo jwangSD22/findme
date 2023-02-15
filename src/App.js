@@ -12,9 +12,9 @@ function App() {
   const [difficultyInfo, setDifficultyInfo] = useState([]);
   const [choosing, setChoosing] = useState(true);
   const [toFind, setToFind] = useState({
-    easy:true,
-    medium:true,
-    hard:true
+    'easy':true,
+    'medium':true,
+    'hard':true
   })
 
   const [winStatus,setWinStatus] = useState(null)

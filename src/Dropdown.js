@@ -35,7 +35,29 @@ else{
   setTimeout(()=>{header.setAttribute('style','animation: none')},250)
 
 }
+
+//check win condition here 
+
+checkWin()
+
 setShowDrop(!showDrop)
+}
+
+const checkWin = () => {
+  console.log('processing check win')
+  let counter = 0
+  for (const key in toFind){
+    console.log(toFind[key])
+    if (toFind[key]===false)
+    {
+      counter+=1
+    }
+
+  }
+  if(counter===2){
+    console.log('YOU WIN ALL')
+  }
+
 }
 
 const divMaker = (difficulty,index) => <div onClick={()=>{clickHandler(difficulty)}} className={`innerChoice`}>
