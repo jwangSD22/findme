@@ -198,20 +198,29 @@ background-color: black;
 
 
 .dropdownBox{
-  font-size:1rem;
-  background-color: white;
+  font-size:.85rem;
+  background-color: antiquewhite;
   width:fit-content;
   height:fit-content;
-  border:solid 2px red;
+  border:solid 2px black;
   display:flex;
+  padding:2px;
   position:absolute;
   flex-direction: column;
-  padding: 1rem;
-  border-radius: 10px;
+  
+  border-radius: 5px;
+}
+
+.innerChoice{
+  background-color: antiquewhite;
+  padding:3px;
+  cursor:pointer;
+  opacity:65%
+
 }
 
 .innerChoice:hover{
-  background-color: black;
+  opacity:100%;
   cursor:pointer;
 }
 

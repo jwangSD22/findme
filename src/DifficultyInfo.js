@@ -17,8 +17,8 @@ const clickHandler = () => {
   hideDiv?<button onClick={clickHandler} style={hideDiv?{}:{display:'none'}}> Click me</button>:
     difficultyInfo.map((e)=>
       
-    <div className='difficultyInfo'>
-      <div className={`difficulty ${e[2]}`}>{e[2]} {console.log(e)}</div>
+    <div key = {e[2]} className='difficultyInfo'>
+      <div className={`difficulty ${e[2]}`}>{e[2]}</div>
       <div className='imgThumb'>
         <img src={data[stage][`${e[2].toLowerCase()}`]}></img></div>
     <div className='nameCap'>{e[0]}</div>

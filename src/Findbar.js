@@ -10,8 +10,7 @@ function Findbar({toFind, stage,choosing,difficultyInfo}) {
     
     {choosing?<h1>BOOTY</h1>:difficultyInfo.map((e)=>
       
-    // toFind[e[2].toLowerCase()]?
-    <div className={
+    <div key = {e[2]} className={
       toFind[e[2].toLowerCase()]===true?'difficultyInfo':
 'difficultyInfo animate__animated animate__bounceOut'
 
@@ -21,9 +20,7 @@ function Findbar({toFind, stage,choosing,difficultyInfo}) {
       <div className='nameCap'>{e[0]}</div>
       <div className='seriesCap'>{e[1]}</div>
       </div>
-      // :
-      // null
-      
+
       )}
   </div>
 
