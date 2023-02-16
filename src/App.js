@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState,useEffect } from "react";
 import Header from "./Header";
 import Findbar from "./Findbar";
 import ChooseLevel from "./ChooseLevel";
@@ -19,16 +18,34 @@ function App() {
 
   const [winStatus,setWinStatus] = useState(null)
   const [timer, setTimer] = useState(0)
+  const [timeRunning,setTimeRunning] = useState(false)
+
+  useEffect(()=>{
+let interval
+    if(timeRunning){
+interval = setInterval(()=>{
+  setTimer((e)=>e+10)
+},10)
+  
+    }
+    else if (!timeRunning){
+      clearInterval(interval)
+    }
+    return () => clearInterval(interval)
+    }
+
+ 
+  ,[timeRunning])
 
 
   return (
     <div className="app">
-      <Header winStatus={winStatus} toFind={toFind} winStatus={winStatus} />
+      <Header winStatus={winStatus} toFind={toFind} timer={timer} timeRunning={timeRunning}/>
       <Findbar toFind={toFind} choosing={choosing} stage={stage} difficultyInfo={difficultyInfo}/>
       <div className="gameWindow">
-        <ChooseLevel stage ={stage} setChoosing={setChoosing} setStage={setStage} choosing={choosing} difficultyInfo={difficultyInfo} setDifficultyInfo = {setDifficultyInfo} />
-        <FindmePage difficultyInfo={difficultyInfo} toFind={toFind} setToFind={setToFind} stage={stage} choosing={choosing} />
-        {/* <Hiscores winStatus = {winStatus} setWinStatus={setWinStatus} choosing={choosing} setChoosing={setChoosing} /> */}
+        <ChooseLevel setTimeRunning={setTimeRunning} setWinStatus={setWinStatus} stage ={stage} setChoosing={setChoosing} setStage={setStage} choosing={choosing} difficultyInfo={difficultyInfo} setDifficultyInfo = {setDifficultyInfo} />
+        <FindmePage setTimeRunning={setTimeRunning}difficultyInfo={difficultyInfo} toFind={toFind} setToFind={setToFind} stage={stage} choosing={choosing} timer={timer} setTimer={setTimer} setWinStatus={setWinStatus}/>
+        <Hiscores stage={stage} winStatus = {winStatus} setWinStatus={setWinStatus} choosing={choosing} setChoosing={setChoosing} timer={timer} setTimer={setTimer}/>
       </div>
 
       <Footer />

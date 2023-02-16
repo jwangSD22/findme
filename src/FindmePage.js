@@ -3,7 +3,7 @@ import React, {useState,useEffect } from 'react'
 import Dropdown from './Dropdown';
 import data from './data'
 
-function FindmePage({difficultyInfo, choosing,stage,toFind, setToFind}) {
+function FindmePage({setTimeRunning,difficultyInfo, choosing,stage,toFind, setToFind,timer,setTimer,setWinStatus}) {
   const [mouse,setMouse] = useState({x:0,y:0})
   const [showDrop, setShowDrop] = useState(false)
   const header = document.querySelector('.header')
@@ -53,19 +53,12 @@ setShowDrop(!showDrop)
     <img onClick={(e)=>clickHandler(e)} className={`gameStage ${stage}`}src={data[stage].src}></img>
     
   </div>
-  <Dropdown setToFind={setToFind} setShowDrop={setShowDrop} difficultyInfo = {difficultyInfo} toFind={toFind} setToFind={setToFind} mouse={mouse} showDrop={showDrop} stage={stage} />
+  <Dropdown setTimeRunning={setTimeRunning} setToFind={setToFind} setShowDrop={setShowDrop} difficultyInfo = {difficultyInfo} toFind={toFind}  mouse={mouse} showDrop={showDrop} stage={stage} timer={timer} setTimer={setTimer} setWinStatus={setWinStatus}/>
   </>
 
   )
    
-// todo
 
-// choosing an item within the dropdown menu component will trigger an async function to check backend to see
-// if coordinate matches the correct position of what is being targeted 
-
-// each time one of the selected characters have been found, must go back to findbar to show that it has been found
-
-// set victory conditions when all three are matched
 
 
 

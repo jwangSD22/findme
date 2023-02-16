@@ -6,6 +6,9 @@ import coll4 from "./assets/coll4.jpg";
 import DifficultyInfo from "./DifficultyInfo";
 import StartButton from "./StartButton";
 import "animate.css";
+import {ImArrowLeft,ImArrowRight} from 'react-icons/im'
+
+
 
 import { app } from "./firebase/firebase";
 import {
@@ -16,7 +19,7 @@ import {
 
 const db = getFirestore(app);
 
-function ChooseLevel({ setChoosing, choosing,stage, setStage,difficultyInfo,setDifficultyInfo }) {
+function ChooseLevel({ setChoosing, choosing,stage, setStage,difficultyInfo,setDifficultyInfo,setTimeRunning }) {
   const [wheelNum, setWheelNum] = useState(0);
   const [hideDiv, setHideDiv] = useState(true);
 
@@ -94,9 +97,9 @@ function ChooseLevel({ setChoosing, choosing,stage, setStage,difficultyInfo,setD
         <div className="bottomBar">
           <div className="bottomBarScroll">
             <div className="imageTitle">
-              <div onClick={getInfo} className="Start Game">
+             
                 {imageInfo[wheelNum][1]}
-              </div>
+              
             </div>
             <div className="wheelButtons">
               <div
@@ -105,7 +108,7 @@ function ChooseLevel({ setChoosing, choosing,stage, setStage,difficultyInfo,setD
                   btnClickHandler("l");
                 }}
               >
-                Scroll Left
+                <ImArrowLeft />
               </div>
               <div
                 className="scrollBtns"
@@ -113,12 +116,12 @@ function ChooseLevel({ setChoosing, choosing,stage, setStage,difficultyInfo,setD
                   btnClickHandler("r");
                 }}
               >
-                Scroll Right
+                <ImArrowRight />
               </div>
             </div>
           </div>
 
-          <StartButton               setChoosing={setChoosing}/>
+          <StartButton setTimeRunning={setTimeRunning}               setChoosing={setChoosing}/>
           
         </div>
       </div>

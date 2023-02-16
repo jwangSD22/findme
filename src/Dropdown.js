@@ -5,7 +5,7 @@ import { doc, getDoc,getDocs,collection } from 'firebase/firestore'
 import data from './data'
 const db = getFirestore(app);
 
-function Dropdown({ setToFind, difficultyInfo, toFind, stage,showDrop,mouse,setShowDrop}) {
+function Dropdown({ setTimeRunning,setToFind, difficultyInfo, toFind, stage,showDrop,mouse,setShowDrop,setWinStatus}) {
 
 const header = document.getElementsByClassName('header')[0]
 
@@ -44,7 +44,6 @@ setShowDrop(!showDrop)
 }
 
 const checkWin = () => {
-  console.log('processing check win')
   let counter = 0
   for (const key in toFind){
     console.log(toFind[key])
@@ -55,7 +54,8 @@ const checkWin = () => {
 
   }
   if(counter===2){
-    console.log('YOU WIN ALL')
+setWinStatus(true)
+setTimeRunning(false)
   }
 
 }
