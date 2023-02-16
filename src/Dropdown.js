@@ -79,4 +79,3 @@ const divMaker = (difficulty,index) => <div onClick={()=>{clickHandler(difficult
 
 export default Dropdown
 
-//I NEED to EDIT THE STYLE OF MY DROPDOWN BOX EVERYTIME I CLICK ON THE IMAGE. 

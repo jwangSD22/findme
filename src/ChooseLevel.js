@@ -4,6 +4,7 @@ import coll2 from "./assets/coll2.jpg";
 import coll3 from "./assets/coll3.jpg";
 import coll4 from "./assets/coll4.jpg";
 import DifficultyInfo from "./DifficultyInfo";
+import StartButton from "./StartButton";
 import "animate.css";
 
 import { app } from "./firebase/firebase";
@@ -44,7 +45,8 @@ function ChooseLevel({ setChoosing, choosing,stage, setStage,difficultyInfo,setD
 
   useEffect(()=>{
     setStage(imageInfo[wheelNum][0])
-    console.log(`stage set to ${imageInfo[wheelNum][0]}`)
+    getInfo()
+    console.log('effect used')
       },[wheelNum])
 
   async function getInfo() {
@@ -89,28 +91,35 @@ function ChooseLevel({ setChoosing, choosing,stage, setStage,difficultyInfo,setD
             />
           </div>
         </div>
-        <div className="imageTitle">
-          <div onClick={getInfo} className="Start Game">
-            {imageInfo[wheelNum][1]}
+        <div className="bottomBar">
+          <div className="bottomBarScroll">
+            <div className="imageTitle">
+              <div onClick={getInfo} className="Start Game">
+                {imageInfo[wheelNum][1]}
+              </div>
+            </div>
+            <div className="wheelButtons">
+              <div
+                className="scrollBtns"
+                onClick={() => {
+                  btnClickHandler("l");
+                }}
+              >
+                Scroll Left
+              </div>
+              <div
+                className="scrollBtns"
+                onClick={() => {
+                  btnClickHandler("r");
+                }}
+              >
+                Scroll Right
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="wheelButtons">
-          <div
-            className="scrollBtns"
-            onClick={() => {
-              btnClickHandler("l");
-            }}
-          >
-            Scroll Left
-          </div>
-          <div
-            className="scrollBtns"
-            onClick={() => {
-              btnClickHandler("r");
-            }}
-          >
-            Scroll Right
-          </div>
+
+          <StartButton               setChoosing={setChoosing}/>
+          
         </div>
       </div>
     </div>

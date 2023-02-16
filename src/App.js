@@ -18,22 +18,20 @@ function App() {
   })
 
   const [winStatus,setWinStatus] = useState(null)
-
+  const [timer, setTimer] = useState(0)
 
 
   return (
     <div className="app">
-      <Header toFind={toFind} winStatus={winStatus} />
+      <Header winStatus={winStatus} toFind={toFind} winStatus={winStatus} />
       <Findbar toFind={toFind} choosing={choosing} stage={stage} difficultyInfo={difficultyInfo}/>
       <div className="gameWindow">
         <ChooseLevel stage ={stage} setChoosing={setChoosing} setStage={setStage} choosing={choosing} difficultyInfo={difficultyInfo} setDifficultyInfo = {setDifficultyInfo} />
         <FindmePage difficultyInfo={difficultyInfo} toFind={toFind} setToFind={setToFind} stage={stage} choosing={choosing} />
-        {/* <Hiscores choosing={choosing} setChoosing={setChoosing} /> */}
+        {/* <Hiscores winStatus = {winStatus} setWinStatus={setWinStatus} choosing={choosing} setChoosing={setChoosing} /> */}
       </div>
 
       <Footer />
-
-      <Link to="/developer">Developer toolz</Link>
     </div>
   );
 }

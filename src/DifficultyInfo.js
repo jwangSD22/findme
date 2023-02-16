@@ -8,13 +8,14 @@ function DifficultyInfo({getInfo,difficultyInfo,hideDiv,setHideDiv,setChoosing,w
 const clickHandler = () => {
   setHideDiv(false)
   getInfo()
-  setChoosing(false)
+  // setChoosing(false)
 }
 
 
   return (
     
-  hideDiv?<button onClick={clickHandler} style={hideDiv?{}:{display:'none'}}> Click me</button>:
+  // hideDiv?<button onClick={clickHandler} style={hideDiv?{}:{display:'none'}}> Click me</button>:
+
     difficultyInfo.map((e)=>
       
     <div key = {e[2]} className='difficultyInfo'>

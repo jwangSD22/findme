@@ -1,4 +1,5 @@
 body {
+  background-color:rgb(37, 4, 114);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -72,8 +73,8 @@ code {
 }
 
 .gameWindow{
-  height:80vh;
-  background-color:darkblue;
+  height:78vh;
+  background-color:rgb(37, 4, 114);
   overflow: auto;
   width:100vw;
   display:flex;
@@ -83,6 +84,8 @@ code {
 }
 
 .footer {
+  position:absolute;
+  bottom:0px;
   background-color:aqua;
 
 }
@@ -129,6 +132,8 @@ border-radius: 25px;
 
 }
 
+
+
 .imgThumb {
   padding-top: 0.5vh;
   padding-bottom: 0.5vh;
@@ -151,17 +156,56 @@ border-radius: 25px;
 
 .imgInContainer{
   opacity: 90%;
-  filter:blur(5px);
+  filter:blur(4px);
   overflow:hidden;
   width:80%
 }
 
-.wheelButtons {
+.bottomBar{
   display:flex;
-  width:30vw;
   justify-content: center;
-  
+  width:100%;
+
 }
+
+.bottomBarScroll{
+  width:80%;
+}
+
+.imageTitle {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wheelButtons{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.bottomBarStart{
+  width:15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid red;
+  border-radius: 15px;
+}
+
+.bottomBarStart:hover{
+  cursor:pointer;
+  color:black;
+  border: 2px solid yellow;
+
+  background-color: lime;
+
+}
+
+
+
 
 .scrollBtns{
   background-color: aqua;
@@ -180,11 +224,11 @@ background-color: black;
 
 }
 .difficulty.Easy{
-  color:skyblue;
+  color:lime;
 }
 
 .difficulty.Medium{
-  color:green
+  color:yellow
 }
 
 .difficulty.Hard{

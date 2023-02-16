@@ -8,7 +8,7 @@ function Findbar({toFind, stage,choosing,difficultyInfo}) {
 
   return (<div className='findBar'>
     
-    {choosing?<h1>BOOTY</h1>:difficultyInfo.map((e)=>
+    {choosing?<h1>SELECT STAGE</h1>:difficultyInfo.map((e)=>
       
     <div key = {e[2]} className={
       toFind[e[2].toLowerCase()]===true?'difficultyInfo':
