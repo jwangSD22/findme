@@ -20,6 +20,7 @@ code {
   height:auto;
 }
 
+
 .myBox { 
   border:solid 2px red
 }
@@ -84,6 +85,13 @@ code {
 
 }
 
+.gameStage{
+
+  width:100%;
+  height:auto;
+  overflow-x: hidden;
+}
+
 .footer {
   position:absolute;
   bottom:0px;
@@ -126,6 +134,7 @@ border-radius: 25px;
 
 .imageToFind{
   width:15%;
+
   display:flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -138,9 +147,11 @@ border-radius: 25px;
 .imgThumb {
   padding-top: 0.5vh;
   padding-bottom: 0.5vh;
+  
 }
 
 .difficultyInfo {
+
   opacity:75%;
   color:white;
   display:flex;
@@ -290,3 +301,29 @@ cursor:pointer;
   align-items: center;
   
 }
+
+.myInput {
+  width:15vw;
+  height:3vh;
+  font-size:3vh;
+}
+
+.submitBtn{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border:solid 2px red;
+  border-radius: 5px;
+  width:5vw;
+  height:3vh
+
+}
+
+.submitBtn:hover{
+  cursor:pointer;
+  background-color: black;
+
+
+}
+
+
