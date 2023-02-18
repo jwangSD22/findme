@@ -302,6 +302,13 @@ cursor:pointer;
   
 }
 
+.hiscoreShow{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .myInput {
   width:15vw;
   height:3vh;
@@ -326,4 +333,10 @@ cursor:pointer;
 
 }
 
+.hiscoreList{
+  display:flex;
+  width:100%;
+  justify-content: space-between;
+
+}
 

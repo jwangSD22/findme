@@ -18,7 +18,7 @@ setName(e.target.value)
 const clickHandler = () => {
 
     if(name.length>0){
-        setSubmitted(false)
+        setSubmitted(true)
         submitAsyncScore()
         setName('')
     }
@@ -39,6 +39,7 @@ hiscores.sort((a,b)=>a['time']-b['time'])
 
     await setDoc(doc(db,stage,'info'),{
         'hiscores': hiscores
+   
     })
 }
 

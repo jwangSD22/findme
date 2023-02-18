@@ -111,7 +111,7 @@ const handleSubmit = async (e) => {
     )
 
     await setDoc(
-      doc(db,currentImageText,'info'),{
+      doc(db,currentImageText,'title'),{
           'title':title
           }
       

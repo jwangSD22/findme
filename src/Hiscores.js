@@ -10,8 +10,9 @@ function Hiscores({stage,winStatus,timer}) {
     <div className='hiscores' style={winStatus!==true?{display:'none'}:null}>
 {
   winStatus?
-  <HiscoreSubmit stage={stage} setSubmitted={setSubmitted} submitted={submitted} timer={timer} />:
-  <HiscoreShow setSubmitted={setSubmitted} submitted={submitted}/>
+  <>  <HiscoreSubmit stage={stage} setSubmitted={setSubmitted} submitted={submitted} timer={timer} />
+  <HiscoreShow stage={stage} setSubmitted={setSubmitted} submitted={submitted}/></>:null
+
 }
 
 
