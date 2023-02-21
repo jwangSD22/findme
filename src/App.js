@@ -45,7 +45,7 @@ interval = setInterval(()=>{
       <div className="gameWindow">
         <ChooseLevel setTimeRunning={setTimeRunning} setWinStatus={setWinStatus} stage ={stage} setChoosing={setChoosing} setStage={setStage} choosing={choosing} difficultyInfo={difficultyInfo} setDifficultyInfo = {setDifficultyInfo} />
         <FindmePage setTimeRunning={setTimeRunning}difficultyInfo={difficultyInfo} toFind={toFind} setToFind={setToFind} stage={stage} choosing={choosing} timer={timer} setTimer={setTimer} setWinStatus={setWinStatus}/>
-        <Hiscores stage={stage} winStatus = {winStatus} setWinStatus={setWinStatus} choosing={choosing} setChoosing={setChoosing} timer={timer} setTimer={setTimer}/>
+        <Hiscores setToFind={setToFind} stage={stage} winStatus = {winStatus} setWinStatus={setWinStatus} choosing={choosing} setChoosing={setChoosing} timer={timer} setTimer={setTimer}/>
       </div>
 
       <Footer />

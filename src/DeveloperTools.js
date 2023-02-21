@@ -110,12 +110,12 @@ const handleSubmit = async (e) => {
         }
     )
 
-    await setDoc(
-      doc(db,currentImageText,'title'),{
-          'title':title
-          }
+    // await setDoc(
+    //   doc(db,currentImageText,'title'),{
+    //       'title':title
+    //       }
       
-  )
+  // )
 
     
 

@@ -87,9 +87,8 @@ code {
 
 .gameStage{
 
-  width:100%;
-  height:auto;
-  overflow-x: hidden;
+
+  overflow-x: auto;
 }
 
 .footer {
@@ -134,17 +133,18 @@ border-radius: 25px;
 
 .imageToFind{
   width:15%;
-
   display:flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  overflow-y: hidden;
 
 }
 
 
 
 .imgThumb {
+  width:100%;
   padding-top: 0.5vh;
   padding-bottom: 0.5vh;
   
@@ -158,6 +158,8 @@ border-radius: 25px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
+
 }
 
 .difficultyInfo:hover {
@@ -235,6 +237,7 @@ cursor:pointer;
 
 .difficulty {
   font-weight:bold;
+
 
 }
 .difficulty.Easy{

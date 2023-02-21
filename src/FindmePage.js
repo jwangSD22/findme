@@ -5,6 +5,7 @@ import data from './data'
 
 function FindmePage({setTimeRunning,difficultyInfo, choosing,stage,toFind, setToFind,timer,setTimer,setWinStatus}) {
   const [mouse,setMouse] = useState({x:0,y:0})
+  const [clientMouse,setClientMouse] = useState({x:0,y:0})
   const [showDrop, setShowDrop] = useState(false)
   const header = document.querySelector('.header')
   const findbar = document.querySelector('.findBar')
@@ -25,7 +26,7 @@ function FindmePage({setTimeRunning,difficultyInfo, choosing,stage,toFind, setTo
 
 const setBox = () => {
   const dropdownBox = document.querySelector('.dropdownBox')
-  dropdownBox.setAttribute('style',`left:${calcOffSet().left}px;top:${calcOffSet().top}px`) 
+  dropdownBox.setAttribute('style',`left:${clientMouse.x}px;top:${clientMouse.y}px`) 
 }
 
 useEffect(()=> {
@@ -34,9 +35,9 @@ useEffect(()=> {
 
 
 const clickHandler = (e) => {
-
 const mouseCoord = e.nativeEvent
 setMouse({x:mouseCoord.offsetX,y:mouseCoord.offsetY})
+setClientMouse({x:e.clientX,y:e.clientY})
 setShowDrop(!showDrop)
 
 

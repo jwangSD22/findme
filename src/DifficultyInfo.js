@@ -20,8 +20,9 @@ const clickHandler = () => {
       
     <div key = {e[2]} className='difficultyInfo'>
       <div className={`difficulty ${e[2]}`}>{e[2]}</div>
-      <div className='imgThumb'>
-        <img src={data[stage][`${e[2].toLowerCase()}`]}></img></div>
+      <div>
+        <img className='imgThumb' src={data[stage][`${e[2].toLowerCase()}`]}></img>
+        </div>
     <div className='nameCap'>{e[0]}</div>
     <div className='seriesCap'>{e[1]}</div>
     </div>

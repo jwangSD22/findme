@@ -3,7 +3,7 @@ import {useState} from 'react'
 import HiscoreShow from './HiscoreShow'
 import HiscoreSubmit from './HiscoreSubmit'
 
-function Hiscores({stage,winStatus,timer}) {
+function Hiscores({setWinStatus,setTimer,setChoosing,setToFind,stage,winStatus,timer}) {
   const [submitted,setSubmitted] = useState(false)
 
   return (
@@ -11,7 +11,7 @@ function Hiscores({stage,winStatus,timer}) {
 {
   winStatus?
   <>  <HiscoreSubmit stage={stage} setSubmitted={setSubmitted} submitted={submitted} timer={timer} />
-  <HiscoreShow stage={stage} setSubmitted={setSubmitted} submitted={submitted}/></>:null
+  <HiscoreShow setSubmitted={setSubmitted}setWinStatus={setWinStatus} setTimer={setTimer} setChoosing={setChoosing} setToFind={setToFind} stage={stage} setSubmitted={setSubmitted} submitted={submitted}/></>:null
 
 }
 
