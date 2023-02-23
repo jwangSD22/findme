@@ -1,9 +1,10 @@
 import React  from 'react'
-import {useEffect} from 'react'
+import {useState, useEffect} from 'react'
 import HiscoreListGen from './HiscoreListGen';
+import 'animate.css'
 
-function HiscoreShow({hiscoreList,title,setSubmitted,setWinStatus,setTimer,setToFind,setChoosing,submitted}) {
-
+function HiscoreShow({name,setName,hiscoreList,title,setSubmitted,setWinStatus,setTimer,setToFind,setChoosing,submitted}) {
+const [hover,setHover] = useState(false)
 
   useEffect(()=>{
   },[hiscoreList])
@@ -21,16 +22,18 @@ setToFind(
 setChoosing(true)
 setWinStatus(null)
 setSubmitted(false)
+setName('')
 }
 
 
   return (
     <div className='hiscoreShow' style={submitted?null:{display:'none'}}>
-        <div>Stage: {title}</div>
-        <div>high scores:</div>
-        <div><HiscoreListGen hiscoreList={hiscoreList} />        
-          </div>
-        <div onClick={newGameHandler}>NEW GAME BUTTON</div>
+        <div className='showStage'>Stage: {title}</div>
+        <div className='showStage T'>TOP 10</div>
+        <HiscoreListGen name={name} hiscoreList={hiscoreList} />        
+        
+        <div             onMouseEnter={()=>setHover(true)} 
+            onMouseLeave={()=>{setHover(false)}} className={hover?"submitBtn animate__animated animate__pulse ":"submitBtn" } onClick={newGameHandler}>NEW GAME BUTTON</div>
     </div>
   )
 }

@@ -12,6 +12,7 @@ function Hiscores({setWinStatus,setTimer,setChoosing,setToFind,stage,winStatus,t
 const [submitted,setSubmitted] = useState(false)
 const [hiscoreList,setHiscoreList] = useState([])
 const [title, setTitle] = useState('')
+const [name,setName] = useState('')
 
 const db = getFirestore(app)
 
@@ -28,8 +29,8 @@ const getAsyncScore = async () => {
     <div className='hiscores' style={winStatus!==true?{display:'none'}:null}>
 {
   winStatus?
-  <>  <HiscoreSubmit getAsyncScore = {getAsyncScore} stage={stage} setSubmitted={setSubmitted} submitted={submitted} timer={timer} />
-  <HiscoreShow hiscoreList = {hiscoreList} title = {title} setSubmitted={setSubmitted}setWinStatus={setWinStatus} setTimer={setTimer} setChoosing={setChoosing} setToFind={setToFind}submitted={submitted}/></>:null
+  <>  <HiscoreSubmit setName = {setName} name={name} getAsyncScore = {getAsyncScore} stage={stage} setSubmitted={setSubmitted} submitted={submitted} timer={timer} />
+  <HiscoreShow setName = {setName} name={name} hiscoreList = {hiscoreList} title = {title} setSubmitted={setSubmitted}setWinStatus={setWinStatus} setTimer={setTimer} setChoosing={setChoosing} setToFind={setToFind}submitted={submitted}/></>:null
 
 }
 

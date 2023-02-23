@@ -5,9 +5,8 @@ import { getFirestore,doc,setDoc,getDoc } from "firebase/firestore";
 import timeToString from './timeToString';
 
 
-function HiscoreSubmit({getAsyncScore,stage,timer,submitted,setSubmitted}) {
+function HiscoreSubmit({getAsyncScore,stage,timer,submitted,setSubmitted,name,setName}) {
 const db = getFirestore(app)
-const [name, setName] = useState('')
 const [hover,setHover] = useState(false)
 
 const submitAsyncScore = async () => {
@@ -36,10 +35,14 @@ setName(e.target.value)
 
 const clickHandler = () => {
 
+
+    if(name.length>16){
+        return alert('Max name length: 15 characters!')
+    }
     if(name.length>0){
         submitAsyncScore()
         setSubmitted(true)
-        setName('')
+        
     }
     else{alert('Please enter a name...')}
 }
@@ -57,7 +60,8 @@ useEffect(() => {
 
   return (
     <div className='hiscoreSubmit' style = {submitted?{display:'none'}:null}>
-        <div className='hiscoreTime'><h1>{timeToString(timer)}</h1></div>
+        <div className='showStage'>YOU WIN!</div>
+        <div className='hiscoreTimeH'><h1>{timeToString(timer)}</h1></div>
         <div><h1>PLEASE ENTER YOUR NAME</h1></div>
         <div><input className='myInput' type='text' value={name} onChange={(e)=>{onChange(e)}}/></div>
         <br/>
