@@ -1,31 +1,12 @@
 import React  from 'react'
-import {useEffect,useState} from 'react'
-import { app } from "./firebase/firebase";
-import { getFirestore,doc,setDoc,collection,getDocs,getDoc, query} from "firebase/firestore";
+import {useEffect} from 'react'
 import HiscoreListGen from './HiscoreListGen';
 
-function HiscoreShow({setSubmitted,setWinStatus,setTimer,setToFind,setChoosing,stage,submitted}) {
-const [hiscoreList,setHiscoreList] = useState([])
-const [title, setTitle] = useState('')
-const db = getFirestore(app)
+function HiscoreShow({hiscoreList,title,setSubmitted,setWinStatus,setTimer,setToFind,setChoosing,submitted}) {
 
 
-const getAsyncScore = async () => {
-
-  const query = await getDoc(doc(db,stage,'info'))
-  const query2 = await getDoc(doc(db,stage,'title'))
-  const hiscores = [...query.data()['hiscores']]
-
-  setHiscoreList(hiscores)
-  setTitle(query2.data()['title'])
-      }
-
-      //run this async code everytime the module is loaded/updated
-//  getAsyncScore();
-
-useEffect(()=>{
-getAsyncScore()
-},[submitted])
+  useEffect(()=>{
+  },[hiscoreList])
 
 
 const newGameHandler = () => {
@@ -47,7 +28,7 @@ setSubmitted(false)
     <div className='hiscoreShow' style={submitted?null:{display:'none'}}>
         <div>Stage: {title}</div>
         <div>high scores:</div>
-        <div><HiscoreListGen hiscoreList={hiscoreList} />         
+        <div><HiscoreListGen hiscoreList={hiscoreList} />        
           </div>
         <div onClick={newGameHandler}>NEW GAME BUTTON</div>
     </div>

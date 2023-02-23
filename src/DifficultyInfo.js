@@ -2,26 +2,18 @@ import React from 'react'
 import data from './data'
 
 
-function DifficultyInfo({getInfo,difficultyInfo,hideDiv,setHideDiv,setChoosing,wheelNum,imageInfo,stage}) {
+function DifficultyInfo({difficultyInfo,stage}) {
 
-
-const clickHandler = () => {
-  setHideDiv(false)
-  getInfo()
-  // setChoosing(false)
-}
 
 
   return (
     
-  // hideDiv?<button onClick={clickHandler} style={hideDiv?{}:{display:'none'}}> Click me</button>:
-
     difficultyInfo.map((e)=>
       
     <div key = {e[2]} className='difficultyInfo'>
       <div className={`difficulty ${e[2]}`}>{e[2]}</div>
       <div>
-        <img className='imgThumb' src={data[stage][`${e[2].toLowerCase()}`]}></img>
+        <img alt={e[2]} className='imgThumb' src={data[stage][`${e[2].toLowerCase()}`]}></img>
         </div>
     <div className='nameCap'>{e[0]}</div>
     <div className='seriesCap'>{e[1]}</div>

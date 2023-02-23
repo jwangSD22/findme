@@ -31,6 +31,7 @@ const setBox = () => {
 
 useEffect(()=> {
   showDrop?setBox():console.log('none')
+  
 },[mouse])
 
 

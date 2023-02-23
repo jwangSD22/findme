@@ -4,9 +4,9 @@ import coll2 from './assets/coll2.jpg'
 import coll3 from './assets/coll3.jpg'
 import coll4 from './assets/coll4.jpg'
 
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import { app } from "./firebase/firebase";
-import { getFirestore,doc,setDoc,collection,getDocs,getDoc, query} from "firebase/firestore";
+import { getFirestore,doc,setDoc,getDoc} from "firebase/firestore";
 
 //insert current image here //
 const currentImage = coll4        
@@ -127,6 +127,7 @@ const imageInfo = async (difficulty) => {
 const dbRef = doc(db,currentImageText,difficulty)
 const querySnapshot = await getDoc(dbRef)
 console.log(querySnapshot.data()[difficulty].coord)
+
 
 
 }

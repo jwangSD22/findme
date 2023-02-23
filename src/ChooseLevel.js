@@ -49,7 +49,6 @@ function ChooseLevel({ setChoosing, choosing,stage, setStage,difficultyInfo,setD
   useEffect(()=>{
     setStage(imageInfo[wheelNum][0])
     getInfo()
-    console.log('effect used')
       },[wheelNum])
 
   async function getInfo() {
